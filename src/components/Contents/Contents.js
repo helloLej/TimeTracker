@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import TimelineBackground from './TimelineBackground'
 import TimeLineLabel from './TimeLineLabel'
 import NowHandLine from './NowHandLine'
-import { timeDataList_plan } from '../Category/data'
+import { timeDataList_plan, timeDataList_log } from '../Category/data'
 
 function Contents() {
   const LINE_START_TIME = 0
@@ -28,7 +28,7 @@ function Contents() {
         />
         <TimeLineLabel LINE_START_TIME={LINE_START_TIME} />
         <TimelineBackground
-          timeData={[]}
+          timeData={timeDataList_log}
           opacity={1}
           subject="write"
           LINE_START_TIME={LINE_START_TIME}

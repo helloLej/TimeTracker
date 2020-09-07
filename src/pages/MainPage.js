@@ -9,7 +9,10 @@ import Header from '../components/Header/Header'
 import { COLOR_BG } from '../commonStyle'
 
 import ModalContainer from '../redux/containers/ModalContainer'
-import { timeDataList_plan } from '../components/Category/data'
+import {
+  timeDataList_plan,
+  timeDataList_log,
+} from '../components/Category/data'
 
 const Wrap = styled.div`
   display: flex;
@@ -69,7 +72,7 @@ function MainPage() {
           />
           <PieChart
             radius={60}
-            timeDataList={[]}
+            timeDataList={timeDataList_log}
             boxstyle={piechart_upper}
             concurrent
           />

@@ -8,7 +8,7 @@ export const colorList = {
   purple: '#8b22ff',
   hotpink: 'hotpink',
   pink: 'pink',
-  gray: '#555',
+  gray: '#666',
 }
 
 export const categoryList = [
@@ -38,11 +38,38 @@ export const timeDataList_plan = [
   {
     time: { hour: 12, min: 30 },
     category: 'yellow',
-    memo: '나갈준비',
+    memo: '식사, 나갈준비',
   },
   {
     time: { hour: 13, min: 30 },
+    category: 'yellow',
+    memo: '이동 : 강남 도착',
+  },
+  {
+    time: { hour: 18, min: 30 },
     category: 'blue',
-    memo: '강남 도착',
+  },
+  {
+    time: { hour: 19, min: 30 },
+    category: 'yellow',
+    memo: '식사',
+  },
+]
+
+export const timeDataList_log = [
+  { time: { hour: 0, min: 0 } },
+  {
+    time: { hour: 7, min: 40 },
+    category: 'gray',
+    memo: '기상',
+  },
+  {
+    time: { hour: 11, min: 40 },
+    category: 'red',
+    memo: ' 개발 공부',
+  },
+  {
+    time: { hour: 12, min: 30 },
+    category: 'yellow',
   },
 ]
