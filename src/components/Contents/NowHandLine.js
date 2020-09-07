@@ -1,16 +1,10 @@
 import React from 'react'
 import css from '@emotion/css'
 import { hour, min } from '../utils/time'
+import CalculateTime from './CalculateTime'
 
 const NowHandLine = (props) => {
-  const [time, setTime] = React.useState(new Date())
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setTime(new Date())
-    }, 60000)
-    return () => {}
-  }, [time])
+  const [time] = CalculateTime()
 
   const current = { hour: hour(time), min: min(time) }
 
