@@ -26,7 +26,7 @@ const colorTimeCircle = (list) => {
   return background
 }
 
-const TimeHand = ({ radius, timeHand, hours, rotate }) => {
+const TimeBackground = ({ radius, timeHand, hours, rotate }) => {
   return (
     <div
       css={css`
@@ -92,25 +92,25 @@ function PieChart({ radius = 300, timeDataList, boxstyle, timeHand }) {
       <Pie>
         <Now now={nowTime}></Now>
       </Pie>
-      <TimeHand
+      <TimeBackground
         radius={radius}
         timeHand={timeHand}
         hours={[18, 6]}
         rotate={0}
       />
-      <TimeHand
+      <TimeBackground
         radius={radius}
         timeHand={timeHand}
         hours={[21, 9]}
         rotate={45}
       />
-      <TimeHand
+      <TimeBackground
         radius={radius}
         timeHand={timeHand}
         hours={[15, 3]}
         rotate={-45}
       />
-      <TimeHand
+      <TimeBackground
         radius={radius}
         timeHand={timeHand}
         hours={[24, 12]}
