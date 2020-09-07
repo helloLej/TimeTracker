@@ -24,13 +24,14 @@ function Contents() {
         <TimelineBackground
           timeData={timeDataList_plan}
           subject="plan"
+          opacity={0.7}
           LINE_START_TIME={LINE_START_TIME}
         />
         <TimeLineLabel LINE_START_TIME={LINE_START_TIME} />
         <TimelineBackground
           timeData={timeDataList_log}
-          opacity={1}
           subject="write"
+          opacity={0.9}
           LINE_START_TIME={LINE_START_TIME}
         />
         <NowHandLine LINE_START_TIME={LINE_START_TIME} />
