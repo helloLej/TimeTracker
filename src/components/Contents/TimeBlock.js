@@ -12,12 +12,13 @@ const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
   const height =
     (Number(endTime.hour) + Number(endTime.min) / 60 - START_TIME) * 30 - top
 
-  const category = categoryList.filter((o) => o.color === el.category)[0]
+  const category = categoryList.filter((o) => o.color === el.category)[0] || ''
   const bgColor = colorList[category.color]
-  const label = `${beforeTime.hour} : 
+  const blockLabel = `${beforeTime.hour} : 
     ${beforeTime.min === 0 ? '00' : beforeTime.min}
     ~ ${endTime.hour} : ${endTime.min === 0 ? '00' : endTime.min}
-    [${category.label}] ${el.memo ? el.memo : ''}`
+    ${category.label ? '[' + category.label + ']' : ''}
+    ${el.memo ? el.memo : ''}`
 
   const distinguish = (e) => {
     console.log('click')
@@ -35,7 +36,6 @@ const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
         height: ${height}px;
         text-overflow: ellipsis;
         overflow: hidden;
-        white-space: wrap;
         box-sizing: border-box;
         &:focus {
           border: 1px solid red;
@@ -67,7 +67,7 @@ const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
           position: absolute;
         `}
       >
-        {label}
+        {blockLabel}
       </span>
     </div>
   )
