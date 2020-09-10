@@ -65,36 +65,34 @@ function Modal(props) {
   const title = subject + ' ' + (props.mode || '')
 
   return (
-    props.show && (
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          min-width: 300px;
-          height: 100vh;
-          position: fixed;
-          left: 0;
-          top: 0;
-          @media (max-width: 300px) {
-            position: absolute;
-          }
-        `}
-      >
-        <Background onClickCapture={hidden} showUp={props.show} />
-        <CenterBox showUp={props.show}>
-          <TitleHead>{title}</TitleHead>
-          <ContentWrap>
-            <TimePopup endTime={props.endTime} />
-            <div>
-              <button>save</button>
-              <button onClick={cancel}>cancel</button>
-            </div>
-          </ContentWrap>
-        </CenterBox>
-      </div>
-    )
+    <div
+      css={css`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-width: 300px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        @media (max-width: 300px) {
+          position: absolute;
+        }
+      `}
+    >
+      <Background onClickCapture={hidden} showUp={props.show} />
+      <CenterBox showUp={props.show}>
+        <TitleHead>{title}</TitleHead>
+        <ContentWrap>
+          <TimePopup endTime={props.endTime} />
+          <div>
+            <button>save</button>
+            <button onClick={cancel}>cancel</button>
+          </div>
+        </ContentWrap>
+      </CenterBox>
+    </div>
   )
 }
 

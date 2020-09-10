@@ -16,15 +16,17 @@ const ModalContainer = (props) => {
   const dispatch = useDispatch()
 
   return (
-    <Modal
-      show={show}
-      subject={subject}
-      mode={mode}
-      endTime={endTime}
-      onCloseClick={() => dispatch(closeAction())}
-      onOpenClick={() => dispatch(openAction())}
-      {...props}
-    />
+    show && (
+      <Modal
+        show={show}
+        subject={subject}
+        mode={mode}
+        endTime={endTime}
+        onCloseClick={() => dispatch(closeAction())}
+        onOpenClick={() => dispatch(openAction())}
+        {...props}
+      />
+    )
   )
 }
 
