@@ -3,7 +3,7 @@ import css from '@emotion/css'
 import { categoryList, colorList } from '../Category/data'
 const START_TIME = 0
 
-const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
+const TimeBlock = ({ el, i, all, subject, opacity = 0.6 }) => {
   const beforeTime = all[i - 1].time
   const endTime = el.time
 
@@ -14,11 +14,14 @@ const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
 
   const category = categoryList.filter((o) => o.color === el.category)[0] || ''
   const bgColor = colorList[category.color]
-  const blockLabel = `${beforeTime.hour} : 
-    ${beforeTime.min === 0 ? '00' : beforeTime.min}
-    ~ ${endTime.hour} : ${endTime.min === 0 ? '00' : endTime.min}
-    ${category.label ? '[' + category.label + ']' : ''}
-    ${el.memo ? el.memo : ''}`
+  const timeMark = `${beforeTime.hour}:${
+    beforeTime.min === 0 ? '00' : beforeTime.min
+  }
+  ~ ${endTime.hour}:${endTime.min === 0 ? '00' : endTime.min}`
+
+  const blockLabel = `${
+    category.label ? timeMark + '[' + category.label + ']' : ''
+  } ${el.memo ? el.memo : ''}`
 
   const distinguish = (e) => {
     console.log('click')
@@ -44,9 +47,7 @@ const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
           border: 1px dotted red;
         }
       `}
-      // onClick={distinguish}
       onFocus={distinguish}
-      onDragEnd={onDragEnd}
     >
       <div
         css={css`
@@ -65,6 +66,7 @@ const TimeBlock = ({ el, i, all, onDragEnd, opacity }) => {
         css={css`
           display: block;
           position: absolute;
+          left: 10px;
         `}
       >
         {blockLabel}
