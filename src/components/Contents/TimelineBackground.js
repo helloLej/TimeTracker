@@ -32,7 +32,7 @@ const TimelineBackground = (props) => {
           {Array.from({ length: 48 }, (v, i) => i).map((el) => (
             <Line
               key={props.keyName + 'line' + el}
-              i={(el + props.LINE_START_TIME * 2) % 48}
+              num={(el + props.LINE_START_TIME * 2) % 48}
               subject={props.subject}
             />
           ))}
@@ -47,11 +47,18 @@ const TimelineBackground = (props) => {
               (el, i, all) =>
                 i > 0 && (
                   <TimeBlock
-                    key={el.time.hour + el.time.min / 60}
+                    key={el.time.hour * 60 + el.time.min}
                     el={el}
-                    i={(i + props.LINE_START_TIME * 2) % 48}
+                    i={i}
                     all={all}
-                    opacity={props.opacity || 0.6}
+                    num={
+                      (el.time.hour * 2 +
+                        el.time.min / 30 +
+                        props.LINE_START_TIME * 2) %
+                      48
+                    }
+                    subject={props.subject}
+                    opacity={props.opacity}
                   />
                 ),
             )}

@@ -24,7 +24,7 @@ const Line = (props) => {
       openAction({
         subject: props.subject,
         mode: ' 생성',
-        startTime: createTimeForm(clickTarget[0]),
+        // startTime: createTimeForm(clickTarget[0]),
         endTime: createTimeForm(clickTarget[1]),
       }),
     )
@@ -45,7 +45,7 @@ const Line = (props) => {
       `}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
-      data-num={props.i / 2}
+      data-num={props.num / 2}
     />
   )
 }

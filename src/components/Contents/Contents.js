@@ -24,7 +24,7 @@ function Contents() {
         <TimelineBackground
           timeData={timeDataList_plan}
           subject="plan"
-          opacity={0.7}
+          opacity={0.8}
           LINE_START_TIME={LINE_START_TIME}
         />
         <TimeLineLabel LINE_START_TIME={LINE_START_TIME} />
